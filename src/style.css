@@ -1,1 +1,42 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: darkgreen;
+}
+
+.card {
+  width: 350px;
+  height: 550px;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heart,
+.diamond {
+  margin: 0px 10px;
+  color: red;
+  font-size: 120px;
+}
+
+.spade,
+.club {
+  margin: 0px 10px;
+  font-size: 120px;
+}
+
+.icon-footer {
+  transform: rotate(180deg);
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  font-size: 150px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+}
