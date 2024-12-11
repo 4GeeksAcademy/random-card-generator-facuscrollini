@@ -40,3 +40,8 @@ footer {
   display: flex;
   flex-direction: row-reverse;
 }
+
+.generador {
+  display: block;
+  margin: 0 auto;
+}

@@ -5,17 +5,16 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const numbers = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
-const figuras = ["♦", "♥", "♠", "♣"];
+function cartaAlAzar() {
+  const numbers = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+  const figuras = ["♦", "♥", "♠", "♣"];
 
-function randomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
+  function randomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
 
-const randomNumber = randomElement(numbers);
-const randomFiguras = randomElement(figuras);
-window.onload = function() {
-  //write your code here
+  const randomNumber = randomElement(numbers);
+  const randomFiguras = randomElement(figuras);
   let header = document.querySelector("header");
   let center = document.querySelector(".center");
   let footer = document.querySelector("footer");
@@ -36,4 +35,16 @@ window.onload = function() {
   header.innerHTML = `<span class="${clase} icon-header">${randomFiguras}</span>`;
   center.innerHTML = `<span class="number">${randomNumber}</span>`;
   footer.innerHTML = `<span class="${clase} icon-footer">${randomFiguras}</span>`;
+
+  setTimeout(cartaAlAzar, 10000);
+}
+
+window.onload = function() {
+  //write your code here
+  cartaAlAzar();
 };
+let boton = document.querySelector(".generador");
+boton.addEventListener("click", () => {
+  console.log("hiciste click");
+  cartaAlAzar();
+});
