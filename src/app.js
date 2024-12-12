@@ -35,8 +35,6 @@ function cartaAlAzar() {
   header.innerHTML = `<span class="${clase} icon-header">${randomFiguras}</span>`;
   center.innerHTML = `<span class="number">${randomNumber}</span>`;
   footer.innerHTML = `<span class="${clase} icon-footer">${randomFiguras}</span>`;
-
-  setTimeout(cartaAlAzar, 10000);
 }
 
 window.onload = function() {
@@ -45,6 +43,19 @@ window.onload = function() {
 };
 let boton = document.querySelector(".generador");
 boton.addEventListener("click", () => {
-  console.log("hiciste click");
   cartaAlAzar();
+});
+setTimeout(() => {
+  cartaAlAzar();
+}, 10000);
+
+let widthInp = document.querySelector("#width");
+let heightInp = document.querySelector("#height");
+let card = document.querySelector(".card");
+widthInp.addEventListener("change", event => {
+  card.style.width = event.target.value;
+});
+
+heightInp.addEventListener("change", event => {
+  card.style.height = event.target.value;
 });

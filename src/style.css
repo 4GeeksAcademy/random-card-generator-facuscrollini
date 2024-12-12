@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 5px 5px 30px black;
 }
 
 .heart,
@@ -44,4 +45,18 @@ footer {
 .generador {
   display: block;
   margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px red;
+}
+
+.configure-card {
+  border: 1px solid red;
+  background-color: white;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.width,
+.height {
+  margin: 10px;
 }
