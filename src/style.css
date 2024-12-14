@@ -1,5 +1,6 @@
 body {
-  background: darkgreen;
+  background: url("https://media.istockphoto.com/id/1207910591/es/foto/mesa-de-p%C3%B3quer-verde.jpg?s=612x612&w=0&k=20&c=LuUjhaMTjujmXlA_0PyN6zwJ9cpsq3M0SuyU0H4ZYA4=");
+  background-size: 100%;
 }
 
 .card {
@@ -12,6 +13,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 5px 5px 30px black;
+  min-width: 200px;
+  min-height: 450px;
 }
 
 .heart,
@@ -20,7 +23,6 @@ body {
   color: red;
   font-size: 120px;
 }
-
 .spade,
 .club {
   margin: 0px 10px;
@@ -29,6 +31,7 @@ body {
 
 .icon-footer {
   transform: rotate(180deg);
+  flex: auto;
 }
 
 .number {
@@ -46,11 +49,14 @@ footer {
   display: block;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 1px 1px 10px red;
+  box-shadow: 1px 1px 10px black;
+  font-size: 20px;
+  background-color: darkgrey;
+  color: white;
 }
 
 .configure-card {
-  border: 1px solid red;
+  border: 10px solid darkred;
   background-color: white;
   width: 250px;
   border-radius: 5px;
@@ -59,4 +65,34 @@ footer {
 .width,
 .height {
   margin: 10px;
+}
+
+.startRandom,
+.stopRandom {
+  display: block;
+  margin: 20px auto;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid white;
+}
+
+.randomBtns {
+  margin: 30px;
+}
+
+.startRandom {
+  background-color: green;
+}
+
+.stopRandom {
+  background-color: red;
+}
+
+.randomBtns {
+  background-color: black;
+  margin: 10px auto;
+  padding: 5px;
+  width: 300px;
+  border-radius: 5px;
 }

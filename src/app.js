@@ -5,6 +5,8 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+let intervalId = null;
+
 function cartaAlAzar() {
   const numbers = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
   const figuras = ["♦", "♥", "♠", "♣"];
@@ -45,13 +47,15 @@ let boton = document.querySelector(".generador");
 boton.addEventListener("click", () => {
   cartaAlAzar();
 });
-setTimeout(() => {
-  cartaAlAzar();
-}, 10000);
+
+function temporizador() {
+  setInterval(cartaAlAzar, 2000);
+}
 
 let widthInp = document.querySelector("#width");
 let heightInp = document.querySelector("#height");
 let card = document.querySelector(".card");
+
 widthInp.addEventListener("change", event => {
   card.style.width = event.target.value;
 });
@@ -59,3 +63,24 @@ widthInp.addEventListener("change", event => {
 heightInp.addEventListener("change", event => {
   card.style.height = event.target.value;
 });
+
+let tempStart = document.querySelector(".startRandom");
+let tempEnd = document.querySelector(".stopRandom");
+
+function initialRandom() {
+  if (!intervalId) {
+    intervalId = setInterval(cartaAlAzar, 2000);
+    return intervalId;
+  }
+}
+
+function stopRandom() {
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+}
+
+tempStart.addEventListener("click", initialRandom);
+
+tempEnd.addEventListener("click", stopRandom);
