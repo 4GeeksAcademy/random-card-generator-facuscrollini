@@ -48,19 +48,15 @@ boton.addEventListener("click", () => {
   cartaAlAzar();
 });
 
-function temporizador() {
-  setInterval(cartaAlAzar, 2000);
-}
-
 let widthInp = document.querySelector("#width");
 let heightInp = document.querySelector("#height");
 let card = document.querySelector(".card");
 
-widthInp.addEventListener("change", event => {
+widthInp.addEventListener("change", (event) => {
   card.style.width = event.target.value;
 });
 
-heightInp.addEventListener("change", event => {
+heightInp.addEventListener("change", (event) => {
   card.style.height = event.target.value;
 });
 
@@ -69,7 +65,7 @@ let tempEnd = document.querySelector(".stopRandom");
 
 function initialRandom() {
   if (!intervalId) {
-    intervalId = setInterval(cartaAlAzar, 2000);
+    intervalId = setInterval(cartaAlAzar, 10000);
     return intervalId;
   }
 }
